@@ -17,10 +17,10 @@
 		'sodienthoai' => $sodienthoai,
 	];
 	
-	echo '<pre>';
-		print_r($_SESSION);
-	echo '</pre>';
-	// setcookie('msg', 'Thêm Mới Thành Công',time()+3);
-	// header('location:list.php');
+	// echo '<pre>';
+	// 	print_r($_SESSION);
+	// echo '</pre>';
+	setcookie('msg', 'Thêm Mới Thành Công',time()+3);
+	header('location:list.php');
 	
  ?>
