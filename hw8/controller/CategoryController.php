@@ -24,16 +24,16 @@ class CategoryController extends BaseController
 	}
 	public function addProcess(){
 		$data = $_POST;
-		$file = $_FILES['image'];
-		$this->model->upLoadFile("image","image","500000",array('jpg','png','txt'));
+		$file = $_FILES['image_category'];
+		$this->model->upLoadFile("image","image_category","500000",array('jpg','png','txt'));
 
 		$arr_data = array();
-		$arr_data['name'] = $data['name'];
+		$arr_data['name_category'] = $data['name_category'];
 		$arr_data['slug'] = $data['slug'];
 		$arr_data['parent_id'] = $data['parent_id'];
-		$arr_data['image'] = $file['name'];
-		$arr_data['description'] = htmlspecialchars($data['description']);;
-		$arr_data['created_at'] = $data['created_at'];
+		$arr_data['image_category'] = $file['name'];
+		$arr_data['description_category'] = $data['description_category'];
+		$arr_data['created_at_category'] = $data['created_at_category'];
 
 		$result = $this->model->add($arr_data);
 		if ($result) {
@@ -60,20 +60,19 @@ class CategoryController extends BaseController
 		$data = $_POST;
 		$id = $data['id'];
 		$file = $_FILES['image_edit'];
-
-		$description = htmlspecialchars($data['description']);
 		$arr_data = array();
-		$arr_data['name'] = $data['name'];
+		$arr_data['name_category'] = $data['name'];
 		$arr_data['slug'] = $data['slug'];
 		$arr_data['parent_id'] = $data['parent_id'];
 		if (!$file['name'] == "") {
 			$this->model->upLoadFile("image","image_edit","500000",array('jpg','png','txt'));
-			$arr_data['image'] = $file['name'];
+			$arr_data['image_category'] = $file['name'];
 		}else {
-			$arr_data['image'] = $data['image'];
+			$arr_data['image_category'] = $data['image'];
 
 		}
-		$arr_data['description'] = $description;
+		$arr_data['description_category'] = $data['description'];
+		$arr_data['created_at_category'] = $data['created_at'];
 
 
 		$result = $this->model->update($arr_data,$id);

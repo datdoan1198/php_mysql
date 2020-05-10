@@ -1,9 +1,31 @@
-<?php 
-	require_once('view/banken/header.php');
- ?>
-<?php 
-	$mod = $_GET['mod'];
-	$act = $_GET['act'];
+<?php
+ 	
+	session_start();
+	date_default_timezone_set('Asia/Ho_Chi_Minh');
+	if (isset($_GET['mod'])) {
+		if ($_GET['mod'] == 'category' || $_GET['mod'] == 'post' || $_GET['mod'] == 'user' ) {
+			if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) {
+				$mod = $_GET['mod'];
+				$act = $_GET['act'];
+			}elseif (isset($_SESSION['user']) && $_SESSION['user']['role'] == 2 ) {
+				$mod = 'post';
+				$act = $_GET['act'];
+			}else {
+				$mod = 'home';
+				$act = 'index2';
+			}
+		}elseif ($_GET['mod'] == 'auth' || $_GET['mod'] == 'home' ) {
+			$mod = $_GET['mod'];
+			$act = $_GET['act'];
+		}
+	}else {
+		$mod = 'home';
+		$act = 'index2';
+	}
+	
+
+
+
 
 	$class_name = ucfirst($mod) . "Controller";
 
@@ -29,6 +51,4 @@
 	$controller_obj->$act();
 
 ?>
-<?php 
-	require_once('view/banken/footer.php');
- ?>
+

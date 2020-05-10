@@ -28,11 +28,13 @@ class UserController extends BaseController
 		$this->model->upLoadFile("image","image","500000",array('jpg','png','txt'));
 
 		$arr_data = array();
-		$arr_data['name'] = $data['name'];
+		$arr_data['name_user'] = $data['name'];
 		$arr_data['email'] = $data['email'];
 		$arr_data['password'] = md5($data['password']);
-		$arr_data['image'] = $file['name'];
-		$arr_data['created_at'] = $data['created_at'];
+		$arr_data['phone'] = $data['phone'];
+		$arr_data['address'] = $data['address'];
+		$arr_data['image_user'] = $file['name'];
+		$arr_data['created_at_user'] = $data['created_at'];
 		$result = $this->model->add($arr_data);
 		if ($result) {
 			setcookie("success","tao moi thanh cong",time()+3);
@@ -58,16 +60,18 @@ class UserController extends BaseController
 		$id = $data['id'];
 		$file = $_FILES['image_edit'];
 		$arr_data = array();
-		$arr_data['name'] = $data['name'];
+		$arr_data['name_user'] = $data['name'];
 		$arr_data['email'] = $data['email'];
+		$arr_data['phone'] = $data['phone'];
+		$arr_data['address'] = $data['address'];
+		$arr_data['created_at_user'] = $data['created_at'];
 		if (!$file['name'] == "") {
 			$this->model->upLoadFile("image","image_edit","500000",array('jpg','png','txt'));
-			$arr_data['image'] = $file['name'];
+			$arr_data['image_user'] = $file['name'];
 		}else {
-			$arr_data['image'] = $data['image'];
+			$arr_data['image_user'] = $data['image'];
 
 		}
-		$arr_data['created_at'] = $data['created_at'];
 		$result = $this->model->update($arr_data,$id);
 		if ($result) {
 			setcookie("success","Update thanh cong",time()+3);
