@@ -3,6 +3,7 @@
 	require('function.php');
 
 	$Posts = getposts($conn);
+    // echo $Posts;
 
  ?>
 

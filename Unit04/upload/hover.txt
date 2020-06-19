@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span class="counter">1,234,567.89</span><br>
+	<span class="counter">99.99</span>	<br>
+	<span class="counter">1234567</span><br>
+	<span class="counter">123456789</span>
+	<script>
+		$('.counter').counterUp({
+		  'time': 2000,
+		  'delay': 10
+		});
+	</script>
+</body>
+</html>

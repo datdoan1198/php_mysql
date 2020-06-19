@@ -141,7 +141,7 @@
 					$arr_data_edit = array();
 					$arr_data_edit['title'] = $data['title'];
 					$arr_data_edit['description'] = htmlspecialchars($data['description']);
-					$arr_data_edit['image'] = $file['name'];;
+					$arr_data_edit['image'] = $file['name'];
 					$arr_data_edit['content'] = htmlspecialchars($data['content']);
 					$arr_data_edit['slug'] = $data['slug'];
 					$arr_data_edit['view_count'] = $data['view_count'];

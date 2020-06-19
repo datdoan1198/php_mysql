@@ -108,6 +108,10 @@
 		}
 		public function detail(){
 			$id = $_GET['id'];
+			$demo = $this->model->getpost($id);
+			$data = array();
+			$data['view_count'] = $demo['view_count']+1 ; 
+			$demo_updata = $this->model->update($data,$id);
 			$Post_detail_id = $this->model->getpost($id);
 			$this->view('Post_FontEnd/detail.php',[
 				'Post_detail_id' => $Post_detail_id,

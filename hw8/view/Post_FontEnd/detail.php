@@ -83,7 +83,7 @@ require('view/FontEnd/header.php');
     <h2 class="text-size-50 text-left">Commnent</h2>
         <hr class="break-small background-primary break-left">
       <div>
-       <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width=""></div>
+       <div class="fb-comments" data-href="http://php22.zent/hw8/index.php?mod=home&amp;act=detail" data-numposts="5" data-width=""></div>
       </div>
     </section>
 

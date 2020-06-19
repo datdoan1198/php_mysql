@@ -87,9 +87,7 @@ class PostController extends BaseController
 			$arr_data_edit['image'] = $data['image'];
 		}
 
-		$arr_data_edit['content'] = str_replace('<p><br></p>', '', htmlspecialchars($data['content']));
-
-
+		$arr_data_edit['content'] = str_replace(htmlspecialchars('<p><br></p>'), '', htmlspecialchars($data['content']));
 		
 		$arr_data_edit['slug'] = $data['slug'];
 		$arr_data_edit['view_count'] = $data['view_count'];

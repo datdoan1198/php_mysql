@@ -3,9 +3,9 @@
 	$giaithua = 1;
 	$n = 10;
 	$s = 0;
-	for ($i=1; $i <=10 ; $i++) { 
+	for ($i=1; $i <= $n ; $i++) { 
 		$giaithua *= $i;
-		$s += (float)(1/$giaithua);
+		$s += $i/$giaithua;
 	}
 	echo "n =".$n."<br>";
 	echo "Tổng S = :".$s;

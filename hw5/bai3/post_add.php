@@ -19,6 +19,12 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="container">
@@ -44,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label for="">Content</label>
-               <textarea name="content" class="form-control"></textarea>
+               <textarea name="content" id="conten" class="form-control"></textarea>
             </div>
             <div class="form-group">
                 <label for="">Slug</label>
@@ -80,5 +86,17 @@
             <button type="submit" class="btn btn-primary" name="submit">Create</button>
         </form>
     </div>
+
+    </form>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#conten').summernote();
+            // $('#texta').summernote('editor.pasteHTML',$('#texta').data('content'));
+
+        })
+    </script>
 </body>
 </html>

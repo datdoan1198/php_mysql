@@ -7,7 +7,7 @@
         // Khai báo tạo PHPMailer
         $mail = new PHPMailer();
         //Khai báo gửi mail bằng SMTP
-        $mail->IsSMTP();
+        $mail->isSMTP();
         //Tắt mở kiểm tra lỗi trả về, chấp nhận các giá trị 0 1 2
         // 0 = off không thông báo bất kì gì, tốt nhất nên dùng khi đã hoàn thành.
         // 1 = Thông báo lỗi ở client
@@ -51,12 +51,10 @@
     }
 
 
-        $email_recive = "nguyenhiepvan.bka@gmail.com";
+        $email_recive = "datdoan319@gmail.com";
         $name = "j";
-        ob_start();
-        require('../emails/demo.php');
-        $contents = ob_get_contents();
-        echo $contents;
+        $contents = 'testsadasdas';
+        // echo $contents;
         $subject = "test eamil 2";
        send_email($email_recive,$name,$contents,$subject);
  ?>

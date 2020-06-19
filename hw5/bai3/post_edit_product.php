@@ -16,18 +16,16 @@
 	}
 
 	$data = $_POST;
-
-	$update_post = "UPDATE posts SET  id = '".$data['id']."' , title = '".$data['title']."' , description =  '".$data['decription']."' , thumbnail = '".$file['name']."' , content = '".$data['content']."' , slug = '".$data['slug']."' , view_count = '".$data['view_count']."' , category_id  ='".$data['category_id']."' , user_id =  '".$data['user_id']."' , created_at =  '".$data['created_at']."' WHERE id =".$id;
+	$content = htmlspecialchars($data['content']);
+	// echo '<pre>';
+	// print_r($data);
+	// echo $content;
+	$update_post = "UPDATE posts SET  id = '".$data['id']."' , title = '".$data['title']."' , description =  '".$data['decription']."' , thumbnail = '".$file['name']."' , content = '".$content."' , slug = '".$data['slug']."' , view_count = '".$data['view_count']."' , category_id  ='".$data['category_id']."' , user_id =  '".$data['user_id']."' , created_at =  '".$data['created_at']."' WHERE id =".$id;
 
 	// echo $update_post;
 
 	$result_post = $conn->query($update_post);
 
 	header('location:list_post.php');
-
-
-
-
-
 
  ?>

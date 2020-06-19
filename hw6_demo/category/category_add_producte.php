@@ -41,17 +41,21 @@
 	$data = $_POST;
 
 	$description = htmlspecialchars($data['description']);
+	echo $description;
 
 	$category->set_category_information($data['id'],$data['name'],$data['slug'],$data['parent_category'],$file['name'],$description);
 
 	$data_category = $category->get_category_information();
+
+	echo '<pre>';
+	print_r($data_category);
 
 	$category->add($data_category);
 
 
 
 
-	header('location:category.php')
+	// header('location:category.php')
 
 
  ?>

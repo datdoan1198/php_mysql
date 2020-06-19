@@ -62,7 +62,7 @@
             </div>
             <div class="form-group">
                 <label for="">Content</label>
-               <textarea name="content" id="content" class="form-control" data-content="<?php echo $data['content'] ?>"></textarea>
+               <textarea name="content" id="content" class="form-control" data-content="<?php echo (str_replace('<p><br></p>', '', $data['content'])) ?>"></textarea>
             </div>
          
             <div class="form-group">
@@ -75,20 +75,18 @@
             </div>
             
             <div class="form-group">
-                <label for="">Catogory_id</label>
-               <select  class="form-control" name="category_id">
+              <label for="">Catogory_id</label>
+              <select  class="form-control" name="category_id">
                    <?php foreach ($categories as $value) { ?>
                     <option value="<?php echo $value['id'] ?>"<?php if($value['id'] == $data['category_id']) echo "selected"  ?> > <?php echo $value['name_category']; ?> </option>
                 <?php } ?>
                </select>
             </div>
             <div class="form-group">
-                <label for="">User_id</label>
-               <select  class="form-control" name="user_id">
-                   <?php foreach ($users as $value) { ?>
-                    <option value="<?php echo $value['id'] ?>" <?php if ($value['id'] == $data['user_id']) echo "selected" ?> > <?php echo $value['name_user']; ?> </option>
-                <?php } ?>
-               </select>
+              <?php foreach ($users as $value) {
+                if ($value['id'] == $data['user_id']) { ?>
+                  <input type="hidden" name="user_id" value="<?php echo $value['id'] ?>">
+              <?php  }  }  ?>   
             </div>
             <div class="form-group">
                 <label for="">Created_id</label>

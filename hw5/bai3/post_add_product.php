@@ -16,10 +16,11 @@
 	}
 
 	$data = $_POST;
+	$content = htmlspecialchars($data['content']);
 	// echo '<pre>';
 	// print_r($data);
 
-	$insert_post = "INSERT INTO posts (id,title,description,thumbnail,content,slug,view_count,user_id,category_id,created_at)  VALUES ('".$data['id']."','".$data['title']."','".$data['decription']."','".$file['name']."','".$data['content']."','".$data['slug']."','".$data['view_count']."','".$data['user_id']."','".$data['category_id']."','".$data['created_at']."') ";
+	$insert_post = "INSERT INTO posts (id,title,description,thumbnail,content,slug,view_count,user_id,category_id,created_at)  VALUES ('".$data['id']."','".$data['title']."','".$data['decription']."','".$file['name']."','".$content."','".$data['slug']."','".$data['view_count']."','".$data['user_id']."','".$data['category_id']."','".$data['created_at']."') ";
 
 	// echo $insert_post;
 
